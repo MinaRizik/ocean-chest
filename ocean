@@ -1,0 +1,10 @@
+for i,v in pairs(workspace["Alchas_Main"]:GetChildren()) do
+    if v.Name == "OceanChest" then
+        if v:FindFirstChild("HumanoidRootPart") then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame
+            wait(0.1)
+            game.ReplicatedStorage.Remotes.RemoteEvents.checkInteract:FireServer(tostring(v.HumanoidRootPart.Interaction.Interact.IntName.Value))
+            wait(2.9)
+        end
+    end
+end
